@@ -99,6 +99,10 @@
       :desc "Run tuir in vterm"
       "v t" #'vterm-run-tuir)
 
+(map! :leader
+      :desc "Insert current date into buffer"
+      "i d" #'org-time-stamp)
+
 (fset 'test-macro-1
    (kmacro-lambda-form [?i ?< ?a ?  ?h ?r ?e ?f ?= ?\" ?\" escape ?x ?A ?> ?< ?/ ?a ?> escape ?h ?h ?h ?h ?h ?i escape ?l] 0 "%d"))
 
