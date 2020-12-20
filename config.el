@@ -139,11 +139,6 @@
       (vterm-send-string vterm-custom-command-name)
       (vterm-send-return)))
 
-(defun test-check-buffer ()
-    (if (get-buffer "*Messages*")
-        (print "Buffer exists")
-      (print "Buffer doesn't exist")))
-
 ;; (defun dired-do-encrypt-file ()
 ;; "Encrypt the group of marked files"
 ;; (interactive)

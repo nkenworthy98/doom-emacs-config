@@ -177,11 +177,6 @@ All these functions open vterm, send a string to vterm containing the name of th
       (rename-buffer vterm-custom-command-name)
       (vterm-send-string vterm-custom-command-name)
       (vterm-send-return)))
-
-(defun test-check-buffer ()
-    (if (get-buffer "*Messages*")
-        (print "Buffer exists")
-      (print "Buffer doesn't exist")))
 #+end_src
 
 * Dired Functions
