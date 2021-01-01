@@ -59,6 +59,9 @@
 ;; (elfeed :variables rmh-elfeed-org-files (list "~/.emacsOrgFiles/private/elfeed1.org"))
 (setq rmh-elfeed-org-files (list "~/.emacsOrgFiles/private/elfeed.org"))
 
+(after! elfeed
+  (setq elfeed-search-filter "@2-week-ago +yt"))
+
 ;; This is to watch mpv in elfeed
 ;; It calls urlscanScript from ~/bin
 (setq browse-url-browser-function 'browse-url-generic

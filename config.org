@@ -84,6 +84,12 @@ Not sure if elfeed already had the elfeed-org functionality when I installed it,
 (setq rmh-elfeed-org-files (list "~/.emacsOrgFiles/private/elfeed.org"))
 #+end_src
 
+Found this in the docs about elfeed specifically. This is used to change the default search filter. As it turns out, I need to wait until after elfeed is loaded before setting the variable. [[~/.emacs.d/modules/app/rss/README.org][Link to internal docs]]
+#+begin_src elisp
+(after! elfeed
+  (setq elfeed-search-filter "@2-week-ago +yt"))
+#+end_src
+
 * Link Handler - urlscanScript.sh
 In urlscanScript.sh, I specify how links should be handled and which programs they should be opened in.
 #+begin_src elisp
