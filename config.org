@@ -33,7 +33,6 @@
 ;;
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
-(setq doom-font (font-spec :family "xos4 Terminus" :size 18))
 (setq doom-font (font-spec :family "Terminus" :size 18))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
@@ -76,7 +75,7 @@ This specifies the file where the org-agenda information is stored.
 #+end_src
 
 * Elfeed Configuration
-Not sure if elfeed already had the elfeed-org functionality when I installed it, but make sure to use it if possible.
+To enable elfeed.org using init.el with doom emacs, make sure to add "+org" after rss under the :app section.
 #+begin_src elisp
 ;; This is for elfeed
 ;; https://develop.spacemacs.org/layers/+readers/elfeed/README.html#setup-feeds
