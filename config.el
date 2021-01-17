@@ -154,9 +154,18 @@
 ;;   (doom-project-find-file "/home/nick/Documents/GU/SeniorYear/"))
 
 (setq org-capture-templates
-    '(("d" "Downloaded Programs" item (file+headline "~/.emacsOrgFiles/org/laptop.org" "Downloaded Programs")
+    '(
+      ("t" "TODO")
+      ("tp" "Personal TODO" entry (file+headline "~/.emacsOrgFiles/agenda/todo.org" "Personal")
+       "* TODO %?\n SCHEDULED: %^t\n" :empty-lines-after 1)
+      ("ts" "School TODO" entry (file+headline "~/.emacsOrgFiles/agenda/todo.org" "School")
+       "* TODO %?\n SCHEDULED: %^t\n" :empty-lines-after 1)
+
+      ("l" "Laptop file")
+      ("ld" "Downloaded Programs" item (file+headline "~/.emacsOrgFiles/org/laptop.org" "Downloaded Programs")
        "%?\n + [ ] from AUR? \n")
-      ("m" "Music to add" entry (file+headline "~/.emacsOrgFiles/org/laptop.org" "Music")
+      ("lm" "Music to add" entry (file+headline "~/.emacsOrgFiles/org/laptop.org" "Music")
        "* TODO %?\n" :empty-lines-after 1)
+
       ("j" "Journal" entry (file+datetree "~/org/journal.org")
        "* %?\nEntered on %U\n  %i\n  %a")))
