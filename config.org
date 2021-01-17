@@ -191,25 +191,26 @@ All these functions open vterm, send a string to vterm containing the name of th
 This section handles any custom org-capture functionality.
 
 #+begin_src elisp
-(setq org-capture-templates
-    '(
+(after! org
+  (setq org-capture-templates
+      '(
       ("t" "TODO")
       ("tp" "Personal TODO" entry (file+headline "~/.emacsOrgFiles/agenda/todo.org" "Personal")
-       "* TODO %?\n SCHEDULED: %^t\n" :empty-lines-after 1)
+      "* TODO %?\n SCHEDULED: %^t\n" :empty-lines-after 1)
       ("ts" "School TODO" entry (file+headline "~/.emacsOrgFiles/agenda/todo.org" "School")
-       "* TODO %?\n SCHEDULED: %^t\n" :empty-lines-after 1)
+      "* TODO %?\n SCHEDULED: %^t\n" :empty-lines-after 1)
 
       ("l" "Laptop file")
       ("ld" "Downloaded Programs" item (file+headline "~/.emacsOrgFiles/org/laptop.org" "Downloaded Programs")
-       "%?\n + [ ] from AUR? \n")
+      "%?\n + [ ] from AUR? \n")
       ("lm" "Music to add" entry (file+headline "~/.emacsOrgFiles/org/laptop.org" "Music")
-       "* TODO %?\n" :empty-lines-after 1)
+      "* TODO %?\n" :empty-lines-after 1)
       ("ln" "New Section" entry (file "~/.emacsOrgFiles/org/laptop.org")
-       "* %?\n" :empty-lines-after 1)
+      "* %?\n" :empty-lines-after 1)
 
       ("H" "Testing more functionality" entry (file+headline "~/.emacsOrgFiles/org/testNote.org" "TestHeader")
-       "* %? \n %a \n" :empty-lines 1)
+      "* %? \n %a \n" :empty-lines 1)
 
       ("j" "Journal" entry (file+datetree "~/org/journal.org")
-       "* %?\nEntered on %U\n  %i\n  %a")))
+      "* %?\nEntered on %U\n  %i\n  %a"))))
 #+end_src
