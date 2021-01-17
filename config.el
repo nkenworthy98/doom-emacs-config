@@ -153,6 +153,11 @@
        "%?\n + [ ] from AUR? \n")
       ("lm" "Music to add" entry (file+headline "~/.emacsOrgFiles/org/laptop.org" "Music")
        "* TODO %?\n" :empty-lines-after 1)
+      ("ln" "New Section" entry (file "~/.emacsOrgFiles/org/laptop.org")
+       "* %?\n" :empty-lines-after 1)
+
+      ("H" "Testing more functionality" entry (file+headline "~/.emacsOrgFiles/org/testNote.org" "TestHeader")
+       "* %? \n %a \n" :empty-lines 1)
 
       ("j" "Journal" entry (file+datetree "~/org/journal.org")
        "* %?\nEntered on %U\n  %i\n  %a")))
