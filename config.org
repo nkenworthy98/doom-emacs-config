@@ -94,8 +94,6 @@ Found this in the docs about elfeed specifically. This is used to change the def
 * Link Handler - urlscanScript.sh
 In urlscanScript.sh, I specify how links should be handled and which programs they should be opened in.
 #+begin_src elisp
-;; This is to watch mpv in elfeed
-;; It calls urlscanScript from ~/bin
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "urlscanScript.sh")
 #+end_src

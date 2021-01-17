@@ -62,8 +62,6 @@
 (after! elfeed
   (setq elfeed-search-filter "@2-week-ago +yt"))
 
-;; This is to watch mpv in elfeed
-;; It calls urlscanScript from ~/bin
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "urlscanScript.sh")
 
