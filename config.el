@@ -87,20 +87,11 @@
       "o r" #'elfeed)
 
 (map! :leader
-      :desc "Run ncmpcpp in vterm"
-      "v m" #'vterm-run-ncmpcpp)
-
-(map! :leader
-      :desc "Run nnn in vterm"
-      "v n" #'vterm-run-nnn)
-
-(map! :leader
-      :desc "Run reflex-curses in vterm"
-      "v r" #'vterm-run-reflex-curses)
-
-(map! :leader
-      :desc "Run tuir in vterm"
-      "v t" #'vterm-run-tuir)
+      (:prefix-map ("v" . "vterm-programs")
+       :desc "Run ncmpcpp in vterm" "m" #'vterm-run-ncmpcpp
+       :desc "Run nnn in vterm" "n" #'vterm-run-nnn
+       :desc "Run reflex-curses in vterm" "r" #'vterm-run-reflex-curses
+       :desc "Run tuir in vterm" "t" #'vterm-run-tuir))
 
 (map! :leader
       :desc "Insert current date into buffer"
