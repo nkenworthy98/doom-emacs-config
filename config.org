@@ -10,6 +10,7 @@
 - [[#custom-functions][Custom Functions]]
   - [[#custom-vterm-functions][custom vterm functions]]
 - [[#dired-functions][Dired Functions]]
+- [[#org-capture][Org-capture]]
 
 * Doom Emacs General Configuration
 #+begin_src elisp
@@ -197,4 +198,15 @@ All these functions open vterm, send a string to vterm containing the name of th
 ;;   "Find org files under seniorYear recursively"
 ;;   (interactive)
 ;;   (doom-project-find-file "/home/nick/Documents/GU/SeniorYear/"))
+#+end_src
+
+* Org-capture
+This section handles any custom org-capture functionality.
+
+#+begin_src elisp
+(setq org-capture-templates
+    '(("d" "Downloaded Programs" item (file+headline "~/.emacsOrgFiles/org/laptop.org" "Downloaded Programs")
+        "%?\n + [ ] from AUR? \n")
+        ("j" "Journal" entry (file+datetree "~/org/journal.org")
+        "* %?\nEntered on %U\n  %i\n  %a")))
 #+end_src
