@@ -76,12 +76,6 @@
       :desc "rg in cwd"
       "s g" #'+ivy/project-search-from-cwd)
 
-(map! :mode html-mode
-      :leader
-      :localleader
-      :desc "HTML links"
-      "t" #'html-custom-insert-ahref)
-
 (map! :leader
       :desc "Open elfeed RSS reader"
       "o r" #'elfeed)
