@@ -106,6 +106,10 @@
       :desc "Insert current date into buffer"
       "i d" #'org-time-stamp)
 
+(map! :leader
+      :desc "org-capture"
+      "x" #'org-capture)
+
 (fset 'test-macro-1
    (kmacro-lambda-form [?i ?< ?a ?  ?h ?r ?e ?f ?= ?\" ?\" escape ?x ?A ?> ?< ?/ ?a ?> escape ?h ?h ?h ?h ?h ?i escape ?l] 0 "%d"))
 
