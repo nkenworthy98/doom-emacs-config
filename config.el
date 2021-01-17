@@ -155,6 +155,6 @@
 
 (setq org-capture-templates
     '(("d" "Downloaded Programs" item (file+headline "~/.emacsOrgFiles/org/laptop.org" "Downloaded Programs")
-        "%?\n + [ ] from AUR? \n")
-        ("j" "Journal" entry (file+datetree "~/org/journal.org")
-        "* %?\nEntered on %U\n  %i\n  %a")))
+       "%?\n + [ ] from AUR? \n")
+      ("j" "Journal" entry (file+datetree "~/org/journal.org")
+       "* %?\nEntered on %U\n  %i\n  %a")))
