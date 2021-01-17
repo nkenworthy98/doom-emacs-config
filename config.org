@@ -188,7 +188,7 @@ All these functions open vterm, send a string to vterm containing the name of th
 #+end_src
 
 * Org-capture
-This section handles any custom org-capture functionality.
+This section handles any custom org-capture functionality. (after! org) part is needed in order to allow my custom org-capture-templates to overwrite doom emacs's default values for the org-capture-templates.
 
 #+begin_src elisp
 (after! org
