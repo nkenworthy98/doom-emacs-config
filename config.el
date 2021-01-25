@@ -6,8 +6,8 @@
 
 ;; These are used for a number of things, particularly for GPG configuration,
 ;; some email clients, file templates and snippets.
-(setq user-full-name "Nick K"
-      user-mail-address "xndt98@live.com")
+;; (setq user-full-name "Nick K"
+;;       user-mail-address "xndt98@live.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -162,3 +162,57 @@
 
       ("j" "Journal" entry (file+datetree "~/org/journal.org")
       "* %?\nEntered on %U\n  %i\n  %a"))))
+
+(require 'mu4e)
+;; (require 'smtpmail)
+
+(defvar my-mu4e-account-alist
+  '(("xndt98-live"
+     (mu4e-sent-folder "/xndt98-live/Sent")
+     (mu4e-drafts-folder "/xndt98-live/Drafts")
+     (mu4e-trash-folder "/xndt98-live/Trash")
+     (mu4e-compose-signature
+       (concat
+         "Nick K\n"
+         "test something\n"))
+     (user-mail-address "xndt98@live.com")
+     (smtpmail-default-smtp-server "smtp.office365.com")
+     (smtpmail-smtp-server "smtp.office365.com")
+     (smtpmail-local-domain "live.com")
+     (smtpmail-smtp-user "xndt98")
+     (smtpmail-smtp-service 587))
+    ("acc2-domain"
+     (mu4e-sent-folder "/acc2-domain/Sent")
+     (mu4e-drafts-folder "/acc2-domain/Drafts")
+     (mu4e-trash-folder "/acc2-domain/Trash")
+     (mu4e-compose-signature
+       (concat
+         "Suzy Q\n"
+         "acc2@domain.com\n"))
+     (user-mail-address "acc2@domain.com")
+     (smtpmail-default-smtp-server "smtp.domain.com")
+     (smtpmail-smtp-server "smtp.domain.com")
+     (smtpmail-smtp-user "acc2@domain.com")
+     (smtpmail-stream-type starttls)
+     (smtpmail-smtp-service 587))
+    ("acc3-domain"
+     (mu4e-sent-folder "/acc3-domain/Sent")
+     (mu4e-drafts-folder "/acc3-domain/Drafts")
+     (mu4e-trash-folder "/acc3-domain/Trash")
+     (mu4e-compose-signature
+       (concat
+         "John Boy\n"
+         "acc3@domain.com\n"))
+     (user-mail-address "acc3@domain.com")
+     (smtpmail-default-smtp-server "smtp.domain.com")
+     (smtpmail-smtp-server "smtp.domain.com")
+     (smtpmail-smtp-user "acc3@domain.com")
+     (smtpmail-stream-type starttls)
+     (smtpmail-smtp-service 587))))
+
+;; (setq send-mail-function    'smtpmail-send-it
+;;           user-mail-address  "xndt98@live.com"
+;;           smtpmail-smtp-server  "smtp.office365.com"
+;;           smtpmail-smtp-user  "xndt98"
+;;           smtpmail-stream-type  'starttls
+;;           smtpmail-smtp-service 587)
