@@ -216,3 +216,5 @@
 ;;           smtpmail-smtp-user  "xndt98"
 ;;           smtpmail-stream-type  'starttls
 ;;           smtpmail-smtp-service 587)
+
+(setq ispell-dictionary "en")

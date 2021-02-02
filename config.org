@@ -12,6 +12,7 @@
 - [[#dired-functions][Dired Functions]]
 - [[#org-capture][Org-capture]]
 - [[#mu4e][Mu4e]]
+- [[#ispell][Ispell]]
 
 * Doom Emacs General Configuration
 #+begin_src elisp
@@ -275,4 +276,11 @@ I found this example from: [[https://www.djcbsoftware.nl/code/mu/mu4e/Contexts-e
 ;;           smtpmail-smtp-user  "xndt98"
 ;;           smtpmail-stream-type  'starttls
 ;;           smtpmail-smtp-service 587)
+#+end_src
+
+* Ispell
+This is needed to specify the right dictionary to use for corrections.
+
+#+begin_src elisp
+(setq ispell-dictionary "en")
 #+end_src
