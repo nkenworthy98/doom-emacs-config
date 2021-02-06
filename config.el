@@ -218,3 +218,9 @@
 ;;           smtpmail-smtp-service 587)
 
 (setq ispell-dictionary "en")
+
+(sp-local-pair 'org-mode "\\[ " " \\]"
+               :trigger "\\ce")
+
+(sp-local-pair 'org-mode "\\frac{" "}{}"
+               :trigger "\\cf")

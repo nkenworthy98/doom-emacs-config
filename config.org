@@ -13,6 +13,8 @@
 - [[#org-capture][Org-capture]]
 - [[#mu4e][Mu4e]]
 - [[#ispell][Ispell]]
+- [[#custom-smartparens][Custom Smartparens]]
+  - [[#latex-equation][LaTeX Equation]]
 
 * Doom Emacs General Configuration
 #+begin_src elisp
@@ -283,4 +285,20 @@ This is needed to specify the right dictionary to use for corrections.
 
 #+begin_src elisp
 (setq ispell-dictionary "en")
+#+end_src
+
+* Custom Smartparens
+Defining custom Smartparens
+
+** LaTeX Equation
+*** Line for Equation
+#+begin_src elisp
+(sp-local-pair 'org-mode "\\[ " " \\]"
+               :trigger "\\ce")
+#+end_src
+
+*** Fractions
+#+begin_src elisp
+(sp-local-pair 'org-mode "\\frac{" "}{}"
+               :trigger "\\cf")
 #+end_src
