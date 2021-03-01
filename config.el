@@ -146,9 +146,9 @@
       '(
       ("t" "TODO")
       ("tp" "Personal TODO" entry (file+headline "~/.emacsOrgFiles/agenda/todo.org" "Personal")
-      "* TODO %?\n SCHEDULED: %^t\n" :empty-lines-after 1)
+      "* TODO %?\nSCHEDULED: %^t\n" :empty-lines-after 1)
       ("ts" "School TODO" entry (file+headline "~/.emacsOrgFiles/agenda/todo.org" "School")
-      "* TODO %?\n SCHEDULED: %^t\n" :empty-lines-after 1)
+      "* TODO %?\nSCHEDULED: %^t\n" :empty-lines-after 1)
 
       ("l" "Laptop file")
       ("ld" "Downloaded Programs" item (file+headline "~/.emacsOrgFiles/org/laptop.org" "Downloaded Programs")
@@ -160,6 +160,9 @@
 
       ("H" "Testing more functionality" entry (file+headline "~/.emacsOrgFiles/org/testNote.org" "TestHeader")
       "* %? \n %a \n" :empty-lines 1)
+
+      ("w" "Watch/Read Later" entry (file "~/.emacsOrgFiles/org/later.org")
+      "* TODO %a %i\nSCHEDULED: %t")
 
       ("j" "Journal" entry (file+datetree "~/org/journal.org")
       "* %?\nEntered on %U\n  %i\n  %a"))))
