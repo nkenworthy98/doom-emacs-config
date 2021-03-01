@@ -25,7 +25,8 @@
 ;; `load-theme' function. These are the defaults.
 ;; (setq doom-theme 'doom-one)
 ;; (setq doom-theme 'wheatgrass)
-(setq doom-theme 'doom-acario-dark)
+;; (setq doom-theme 'doom-acario-dark)
+(setq doom-theme 'doom-homage-black)
 
 ;; If you intend to use org, it is recommended you change this!
 (setq org-directory "~/.emacsOrgFiles/org/")
