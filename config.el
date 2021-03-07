@@ -63,6 +63,16 @@
 (after! elfeed
   (setq elfeed-search-filter "@2-week-ago +yt"))
 
+(defun elfeed-custom-minimize-cutoff ()
+  "Change search filter to speed up time updating elfeed"
+  (interactive)
+  (setq elfeed-search-filter "@1-minute-ago +yt"))
+
+(defun elfeed-custom-default-filter ()
+  "Change search filter to default"
+  (interactive)
+  (setq elfeed-search-filter "@2-weeks-ago +yt"))
+
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "urlscanScript.sh")
 
@@ -93,6 +103,11 @@
 (map! :leader
       :desc "org-capture"
       "x" #'org-capture)
+
+(map! :map elfeed-search-mode-map
+      :localleader
+      :desc "Minimize Cutoff Filter" "m" #'elfeed-custom-minimize-cutoff
+      :desc "Default Filter" "d" #'elfeed-custom-default-filter)
 
 (fset 'test-macro-1
    (kmacro-lambda-form [?i ?< ?a ?  ?h ?r ?e ?f ?= ?\" ?\" escape ?x ?A ?> ?< ?/ ?a ?> escape ?h ?h ?h ?h ?h ?i escape ?l] 0 "%d"))
