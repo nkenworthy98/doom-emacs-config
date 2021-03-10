@@ -66,12 +66,26 @@
 (defun elfeed-custom-minimize-cutoff ()
   "Change search filter to speed up time updating elfeed"
   (interactive)
-  (setq elfeed-search-filter "@1-minute-ago +yt"))
+  (setq elfeed-search-filter "@1-minute-ago +yt")
+  (elfeed-search-update--force))
 
 (defun elfeed-custom-default-filter ()
   "Change search filter to default"
   (interactive)
-  (setq elfeed-search-filter "@2-weeks-ago +yt"))
+  (setq elfeed-search-filter "@2-weeks-ago +yt")
+  (elfeed-search-update--force))
+
+;; TODO: still need to figure out
+;;       how to wait until update
+;;       finishes before changing
+;;       filter back to default and
+;;       refreshing screen
+;; (defun elfeed-quickly-update ()
+;;   "Quickly update elfeed"
+;;   (interactive)
+;;   (setq elfeed-search-filter "@1-minute-ago +yt")
+;;   (elfeed-search-update--force)
+;;   (elfeed-update)
 
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "urlscanScript.sh")
