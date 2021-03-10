@@ -152,6 +152,13 @@ In urlscanScript.sh, I specify how links should be handled and which programs th
       :localleader
       :desc "Minimize Cutoff Filter" "m" #'elfeed-custom-minimize-cutoff
       :desc "Default Filter" "d" #'elfeed-custom-default-filter)
+
+(map! :after evil-org
+      :map evil-org-mode-map
+      :m "[[" nil
+      :m "]]" nil
+      :m "[[" #'org-previous-visible-heading
+      :m "]]" #'org-next-visible-heading)
 #+end_src
 
 * Custom Macros
