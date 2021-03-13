@@ -180,28 +180,28 @@
 (after! org
   (setq org-capture-templates
       '(
-      ("t" "TODO")
-      ("tp" "Personal TODO" entry (file+headline "~/.emacsOrgFiles/agenda/todo.org" "Personal")
-      "* TODO %?\nSCHEDULED: %^t\n" :empty-lines-after 1)
-      ("ts" "School TODO" entry (file+headline "~/.emacsOrgFiles/agenda/todo.org" "School")
-      "* TODO %?\nSCHEDULED: %^t\n" :empty-lines-after 1)
+        ("t" "TODO")
+        ("tp" "Personal TODO" entry (file+headline "~/.emacsOrgFiles/agenda/todo.org" "Personal")
+         "* TODO %?\nSCHEDULED: %^t\n" :empty-lines-after 1)
+        ("ts" "School TODO" entry (file+headline "~/.emacsOrgFiles/agenda/todo.org" "School")
+         "* TODO %?\nSCHEDULED: %^t\n" :empty-lines-after 1)
 
-      ("l" "Laptop file")
-      ("ld" "Downloaded Programs" item (file+headline "~/.emacsOrgFiles/org/laptop.org" "Downloaded Programs")
-      "%?\n + [ ] from AUR? \n")
-      ("lm" "Music to add" entry (file+headline "~/.emacsOrgFiles/org/laptop.org" "Music")
-      "* TODO %?\n" :empty-lines-after 1)
-      ("ln" "New Section" entry (file "~/.emacsOrgFiles/org/laptop.org")
-      "* %?\n" :empty-lines-after 1)
+        ("l" "Laptop file")
+        ("ld" "Downloaded Programs" item (file+headline "~/.emacsOrgFiles/org/laptop.org" "Downloaded Programs")
+         "%?\n + [ ] from AUR? \n")
+        ("lm" "Music to add" entry (file+headline "~/.emacsOrgFiles/org/laptop.org" "Music")
+         "* TODO %?\n" :empty-lines-after 1)
+        ("ln" "New Section" entry (file "~/.emacsOrgFiles/org/laptop.org")
+         "* %?\n" :empty-lines-after 1)
 
-      ("H" "Testing more functionality" entry (file+headline "~/.emacsOrgFiles/org/testNote.org" "TestHeader")
-      "* %? \n %a \n" :empty-lines 1)
+        ("H" "Testing more functionality" entry (file+headline "~/.emacsOrgFiles/org/testNote.org" "TestHeader")
+         "* %? \n %a \n" :empty-lines 1)
 
-      ("w" "Watch/Read Later" entry (file "~/.emacsOrgFiles/org/later.org")
-      "* TODO %a %i\nSCHEDULED: %t")
+        ("w" "Watch/Read Later" entry (file "~/.emacsOrgFiles/org/later.org")
+         "* TODO %a %i\nSCHEDULED: %t")
 
-      ("j" "Journal" entry (file+datetree "~/org/journal.org")
-      "* %?\nEntered on %U\n  %i\n  %a"))))
+        ("j" "Journal" entry (file+datetree "~/org/journal.org")
+         "* %?\nEntered on %U\n  %i\n  %a"))))
 
 (require 'mu4e)
 ;; (require 'smtpmail)
