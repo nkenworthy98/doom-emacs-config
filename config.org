@@ -16,6 +16,7 @@
 - [[#custom-smartparens][Custom Smartparens]]
   - [[#latex-equation][LaTeX Equation]]
 - [[#org-crypt][Org-Crypt]]
+- [[#default-indent][Default Indent]]
 
 * Doom Emacs General Configuration
 #+begin_src elisp
@@ -368,4 +369,10 @@ This allows me to encrypt certain part of an org file by tagging them with =:cry
 ;; To turn it off only locally, you can insert this:
 ;;
 ;; # -*- buffer-auto-save-file-name: nil; -*-
+#+end_src
+
+* Default Indent
+This changes the default number of spaces when indenting (hitting tab) in various files.
+#+begin_src elisp
+(setq perl-indent-level 2)
 #+end_src

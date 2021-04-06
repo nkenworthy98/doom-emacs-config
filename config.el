@@ -282,3 +282,5 @@
 ;; To turn it off only locally, you can insert this:
 ;;
 ;; # -*- buffer-auto-save-file-name: nil; -*-
+
+(setq perl-indent-level 2)
