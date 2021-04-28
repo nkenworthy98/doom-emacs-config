@@ -284,3 +284,8 @@
 ;; # -*- buffer-auto-save-file-name: nil; -*-
 
 (setq perl-indent-level 2)
+
+(add-hook! 'org-mode-hook
+  (setq-local yas-indent-line 'fixed))
+
+(setq yas-triggers-in-field t)

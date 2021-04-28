@@ -17,6 +17,7 @@
   - [[#latex-equation][LaTeX Equation]]
 - [[#org-crypt][Org-Crypt]]
 - [[#default-indent][Default Indent]]
+- [[#yasnippet-indent][Yasnippet Indent]]
 
 * Doom Emacs General Configuration
 #+begin_src elisp
@@ -375,4 +376,13 @@ This allows me to encrypt certain part of an org file by tagging them with =:cry
 This changes the default number of spaces when indenting (hitting tab) in various files.
 #+begin_src elisp
 (setq perl-indent-level 2)
+#+end_src
+
+* Yasnippet Indent
+I needed to change this value in order for yasnippet to indent the snippet properly.
+#+begin_src elisp
+(add-hook! 'org-mode-hook
+  (setq-local yas-indent-line 'fixed))
+
+(setq yas-triggers-in-field t)
 #+end_src
