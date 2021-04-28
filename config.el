@@ -87,6 +87,10 @@
 ;;   (elfeed-search-update--force)
 ;;   (elfeed-update)
 
+(add-hook 'elfeed-search-mode-hook
+          (lambda ()
+            (display-line-numbers-mode 1)))
+
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "urlscanScript.sh")
 
