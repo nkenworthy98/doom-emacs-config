@@ -1,0 +1,4 @@
+# key: int
+# name: org-latex-integral
+# --
+\int_{$1}^{$2} $3 \,d$4 $0

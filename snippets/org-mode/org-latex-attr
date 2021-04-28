@@ -1,0 +1,5 @@
+# key: latex-attr
+# name: org-latex-attr
+# --
+#+attr_latex: :width $1
+$0

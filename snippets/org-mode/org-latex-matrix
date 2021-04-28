@@ -1,0 +1,11 @@
+# key: cmat
+# name: org-latex-matrix
+# --
+\begin{displaymath}
+  \left[
+    \begin{matrix}
+    $1
+    \end{matrix}
+  \right]
+\end{displaymath}
+$0
