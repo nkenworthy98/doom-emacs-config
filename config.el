@@ -263,12 +263,6 @@
 
 (setq ispell-dictionary "en")
 
-(sp-local-pair 'org-mode "\\[ " " \\]"
-               :trigger "\\ce")
-
-(sp-local-pair 'org-mode "\\frac{" "}{}"
-               :trigger "\\cf")
-
 (require 'org-crypt)
 (org-crypt-use-before-save-magic)
 (setq org-tags-exclude-from-inheritance '("crypt"))

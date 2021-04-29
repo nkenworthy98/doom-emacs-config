@@ -14,7 +14,6 @@
 - [[#mu4e][Mu4e]]
 - [[#ispell][Ispell]]
 - [[#custom-smartparens][Custom Smartparens]]
-  - [[#latex-equation][LaTeX Equation]]
 - [[#org-crypt][Org-Crypt]]
 - [[#default-indent][Default Indent]]
 - [[#yasnippet-indent][Yasnippet Indent]]
@@ -342,19 +341,6 @@ This is needed to specify the right dictionary to use for corrections.
 
 * Custom Smartparens
 Defining custom Smartparens
-
-** LaTeX Equation
-*** Line for Equation
-#+begin_src elisp
-(sp-local-pair 'org-mode "\\[ " " \\]"
-               :trigger "\\ce")
-#+end_src
-
-*** Fractions
-#+begin_src elisp
-(sp-local-pair 'org-mode "\\frac{" "}{}"
-               :trigger "\\cf")
-#+end_src
 
 * Org-Crypt
 This allows me to encrypt certain part of an org file by tagging them with =:crypt:=. Below is the recommended settings, which I found in the internal org-mode documentation under the miscellaneous section.
