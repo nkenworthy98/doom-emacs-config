@@ -4,7 +4,7 @@
 - [[#doom-emacs-general-configuration][Doom Emacs General Configuration]]
 - [[#org-agenda][Org-Agenda]]
 - [[#elfeed-configuration][Elfeed Configuration]]
-- [[#link-handler---urlscanscriptsh][Link Handler - urlscanScript.sh]]
+- [[#link-handler---urlscansh][Link Handler - urlscan.sh]]
 - [[#custom-keybindings][Custom Keybindings]]
 - [[#custom-macros][Custom Macros]]
 - [[#custom-functions][Custom Functions]]
@@ -17,6 +17,7 @@
 - [[#org-crypt][Org-Crypt]]
 - [[#default-indent][Default Indent]]
 - [[#yasnippet-indent][Yasnippet Indent]]
+- [[#org-habit][Org-Habit]]
 
 * Doom Emacs General Configuration
 #+begin_src elisp
@@ -74,6 +75,8 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
+;; Changes the splash image
+(setq fancy-splash-image "~/Pictures/logos/emacs/emacs-logo.png")
 #+end_src
 
 * Org-Agenda
@@ -132,11 +135,11 @@ This adds line numbers to elfeed, which I can use to navigate a little faster
             (display-line-numbers-mode 1)))
 #+end_src
 
-* Link Handler - urlscanScript.sh
-In urlscanScript.sh, I specify how links should be handled and which programs they should be opened in.
+* Link Handler - urlscan.sh
+In urlscan.sh, I specify how links should be handled and which programs they should be opened in.
 #+begin_src elisp
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "urlscanScript.sh")
+      browse-url-generic-program "urlscan.sh")
 #+end_src
 
 * Custom Keybindings
@@ -378,4 +381,10 @@ I needed to change this value in order for yasnippet to indent the snippet prope
   (setq-local yas-indent-line 'fixed))
 
 (setq yas-triggers-in-field t)
+#+end_src
+
+* Org-Habit
+#+begin_src emacs-lisp
+(after! org
+  (add-to-list 'org-modules 'org-habit))
 #+end_src

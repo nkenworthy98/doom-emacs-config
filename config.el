@@ -52,6 +52,9 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
+;; Changes the splash image
+(setq fancy-splash-image "~/Pictures/logos/emacs/emacs-logo.png")
+
 (setq org-agenda-files '("~/.emacsOrgFiles/agenda/todo.org"))
 
 ;; This is for elfeed
@@ -92,7 +95,7 @@
             (display-line-numbers-mode 1)))
 
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "urlscanScript.sh")
+      browse-url-generic-program "urlscan.sh")
 
 ;; Custom Keybindings
 (map! :leader
@@ -287,3 +290,6 @@
   (setq-local yas-indent-line 'fixed))
 
 (setq yas-triggers-in-field t)
+
+(after! org
+  (add-to-list 'org-modules 'org-habit))
