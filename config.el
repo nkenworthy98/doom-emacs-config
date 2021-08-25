@@ -78,18 +78,6 @@
   (setq elfeed-search-filter "@2-weeks-ago +yt")
   (elfeed-search-update--force))
 
-;; TODO: still need to figure out
-;;       how to wait until update
-;;       finishes before changing
-;;       filter back to default and
-;;       refreshing screen
-;; (defun elfeed-quickly-update ()
-;;   "Quickly update elfeed"
-;;   (interactive)
-;;   (setq elfeed-search-filter "@1-minute-ago +yt")
-;;   (elfeed-search-update--force)
-;;   (elfeed-update)
-
 (add-hook 'elfeed-search-mode-hook
           (lambda ()
             (display-line-numbers-mode 1)))
