@@ -173,17 +173,6 @@
       (vterm-send-string vterm-custom-command-name)
       (vterm-send-return)))
 
-;; (defun dired-do-encrypt-file ()
-;; "Encrypt the group of marked files"
-;; (interactive)
-;; (dired-do-shell-command
-;;  "gpg -r 'Nicholas Kenworthy' -e" current-prefix-arg
-;;  (dired-get-marked-files t current-prefix-arg)))
-;; (defun find-school-notes-org-files ()
-;;   "Find org files under seniorYear recursively"
-;;   (interactive)
-;;   (doom-project-find-file "/home/nick/Documents/GU/SeniorYear/"))
-
 (after! org
   (setq org-capture-templates
       '(
