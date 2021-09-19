@@ -171,11 +171,14 @@
          "* TODO %?\nSCHEDULED: %^t\n")
 
         ("l" "Laptop file")
-        ("ld" "Downloaded Programs" item (file+headline "~/.emacsOrgFiles/org/laptop.org" "Downloaded Programs")
-         "%?\n + [ ] from AUR? \n")
         ("lm" "Music to add" entry (file+headline "~/.emacsOrgFiles/org/laptop.org" "Music")
          "* TODO %?\n" :empty-lines-after 1)
         ("ln" "New Section" entry (file "~/.emacsOrgFiles/org/laptop.org")
+         "* %?\n" :empty-lines-after 1)
+        ("ld" "Downloaded Programs")
+        ("ldd" "Default or Other Repo" entry (file+headline "~/.emacsOrgFiles/org/laptop.org" "Default Repo or Other")
+         "* %?\n" :empty-lines-after 1)
+        ("lda" "AUR" entry (file+headline "~/.emacsOrgFiles/org/laptop.org" "AUR")
          "* %?\n" :empty-lines-after 1)
 
         ("H" "Testing more functionality" entry (file+headline "~/.emacsOrgFiles/org/testNote.org" "TestHeader")
