@@ -16,6 +16,8 @@
 - [[#default-indent][Default Indent]]
 - [[#yasnippet-indent][Yasnippet Indent]]
 - [[#org-habit][Org-Habit]]
+- [[#custom-file-templates][Custom File Templates]]
+  - [[#perl-file-template][Perl File Template]]
 
 * Doom Emacs General Configuration
 #+begin_src elisp
@@ -359,4 +361,10 @@ I needed to change this value in order for yasnippet to indent the snippet prope
 #+begin_src emacs-lisp
 (after! org
   (add-to-list 'org-modules 'org-habit))
+#+end_src
+
+* Custom File Templates
+** Perl File Template
+#+begin_src emacs-lisp
+(set-file-template! "\\.pl$" :trigger "__" :mode 'perl-mode)
 #+end_src

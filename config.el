@@ -273,3 +273,5 @@
 
 (after! org
   (add-to-list 'org-modules 'org-habit))
+
+(set-file-template! "\\.pl$" :trigger "__" :mode 'perl-mode)
