@@ -83,7 +83,7 @@
             (display-line-numbers-mode 1)))
 
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "urlscan.sh")
+      browse-url-generic-program "link-handler.pl")
 
 ;; Custom Keybindings
 (map! :leader

@@ -4,7 +4,7 @@
 - [[#doom-emacs-general-configuration][Doom Emacs General Configuration]]
 - [[#org-agenda][Org-Agenda]]
 - [[#elfeed-configuration][Elfeed Configuration]]
-- [[#link-handler---urlscansh][Link Handler - urlscan.sh]]
+- [[#link-handler---link-handlerpl][Link Handler - link-handler.pl]]
 - [[#custom-keybindings][Custom Keybindings]]
 - [[#custom-macros][Custom Macros]]
 - [[#custom-functions][Custom Functions]]
@@ -123,11 +123,11 @@ This adds line numbers to elfeed, which I can use to navigate a little faster
             (display-line-numbers-mode 1)))
 #+end_src
 
-* Link Handler - urlscan.sh
-In urlscan.sh, I specify how links should be handled and which programs they should be opened in.
+* Link Handler - link-handler.pl
+In link-handler.pl, I specify how links should be handled and which programs they should be opened in.
 #+begin_src elisp
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "urlscan.sh")
+      browse-url-generic-program "link-handler.pl")
 #+end_src
 
 * Custom Keybindings
