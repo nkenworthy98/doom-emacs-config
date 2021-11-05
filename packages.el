@@ -52,3 +52,4 @@
 ;(package! builtin-package :recipe (:branch "develop"))
 
 (package! elfeed-goodies :disable t)
+(package! mu4e-alert :disable t)
