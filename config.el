@@ -55,7 +55,8 @@
 ;; Changes the splash image
 (setq fancy-splash-image "~/Pictures/logos/emacs/emacs-logo.png")
 
-(setq org-agenda-files '("~/.emacsOrgFiles/agenda/todo.org"))
+(setq org-agenda-files '("~/.emacsOrgFiles/agenda/todo.org"
+                         "~/.emacsOrgFiles/agenda/habits.org"))
 
 ;; This is for elfeed
 ;; https://develop.spacemacs.org/layers/+readers/elfeed/README.html#setup-feeds
