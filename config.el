@@ -65,7 +65,7 @@
 (setq rmh-elfeed-org-files (list "~/.emacsOrgFiles/private/elfeed.org"))
 
 (after! elfeed
-  (setq elfeed-search-filter "@2-week-ago +yt"))
+  (setq elfeed-search-filter "@1-minute-ago +yt"))
 
 (defun elfeed-custom-minimize-cutoff ()
   "Change search filter to speed up time updating elfeed"
@@ -77,6 +77,12 @@
   "Change search filter to default"
   (interactive)
   (setq elfeed-search-filter "@2-weeks-ago +yt")
+  (elfeed-search-update--force))
+
+(defun elfeed-custom-radio-filter ()
+  "Change search filter to radio"
+  (interactive)
+  (setq elfeed-search-filter "@2-weeks-ago +radio")
   (elfeed-search-update--force))
 
 (add-hook 'elfeed-search-mode-hook
@@ -117,7 +123,8 @@
 (map! :map elfeed-search-mode-map
       :localleader
       :desc "Minimize Cutoff Filter" "m" #'elfeed-custom-minimize-cutoff
-      :desc "Default Filter" "d" #'elfeed-custom-default-filter)
+      :desc "Default Filter" "d" #'elfeed-custom-default-filter
+      :desc "Radio Filter" "r" #'elfeed-custom-radio-filter)
 
 (map! :after evil-org
       :map evil-org-mode-map

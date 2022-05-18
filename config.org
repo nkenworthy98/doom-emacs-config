@@ -99,7 +99,7 @@ To enable elfeed.org using init.el with doom emacs, make sure to add "+org" afte
 Found this in the docs about elfeed specifically. This is used to change the default search filter. As it turns out, I need to wait until after elfeed is loaded before setting the variable. [[~/.emacs.d/modules/app/rss/README.org][Link to internal docs]]
 #+begin_src elisp
 (after! elfeed
-  (setq elfeed-search-filter "@2-week-ago +yt"))
+  (setq elfeed-search-filter "@1-minute-ago +yt"))
 #+end_src
 
 This is used to quickly update. I found that if you lower the search-filter to a low cutoff, such as 1-minute-ago, elfeed updates really quickly without locking up emacs, which was a problem I was having beforehand.
@@ -114,6 +114,12 @@ This is used to quickly update. I found that if you lower the search-filter to a
   "Change search filter to default"
   (interactive)
   (setq elfeed-search-filter "@2-weeks-ago +yt")
+  (elfeed-search-update--force))
+
+(defun elfeed-custom-radio-filter ()
+  "Change search filter to radio"
+  (interactive)
+  (setq elfeed-search-filter "@2-weeks-ago +radio")
   (elfeed-search-update--force))
 #+end_src
 
@@ -164,7 +170,8 @@ In link-handler.pl, I specify how links should be handled and which programs the
 (map! :map elfeed-search-mode-map
       :localleader
       :desc "Minimize Cutoff Filter" "m" #'elfeed-custom-minimize-cutoff
-      :desc "Default Filter" "d" #'elfeed-custom-default-filter)
+      :desc "Default Filter" "d" #'elfeed-custom-default-filter
+      :desc "Radio Filter" "r" #'elfeed-custom-radio-filter)
 
 (map! :after evil-org
       :map evil-org-mode-map
