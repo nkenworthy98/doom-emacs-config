@@ -182,5 +182,3 @@
        :config
        literate
        (default +bindings +smartparens))
-
-(setq evil-respect-visual-line-mode nil)

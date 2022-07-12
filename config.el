@@ -126,13 +126,6 @@
       :desc "Default Filter" "d" #'elfeed-custom-default-filter
       :desc "Radio Filter" "r" #'elfeed-custom-radio-filter)
 
-(map! :after evil-org
-      :map evil-org-mode-map
-      :m "[[" nil
-      :m "]]" nil
-      :m "[[" #'org-previous-visible-heading
-      :m "]]" #'org-next-visible-heading)
-
 (fset 'test-macro-1
    (kmacro-lambda-form [?i ?< ?a ?  ?h ?r ?e ?f ?= ?\" ?\" escape ?x ?A ?> ?< ?/ ?a ?> escape ?h ?h ?h ?h ?h ?i escape ?l] 0 "%d"))
 
