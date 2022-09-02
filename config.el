@@ -1,67 +1,86 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
-;; refresh' after modifying this file!
+;; sync' after modifying this file!
 
 
-;; These are used for a number of things, particularly for GPG configuration,
-;; some email clients, file templates and snippets.
+;; Some functionality uses this to identify you, e.g. GPG configuration, email
+;; clients, file templates and snippets. It is optional.
 ;; (setq user-full-name "Nick K"
 ;;       user-mail-address "xndt98@live.com")
 
-;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
-;; are the three important ones:
+;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
-;; + `doom-font'
-;; + `doom-variable-pitch-font'
-;; + `doom-big-font' -- used for `doom-big-font-mode'
+;; - `doom-font' -- the primary font to use
+;; - `doom-variable-pitch-font' -- a non-monospace font (where applicable)
+;; - `doom-big-font' -- used for `doom-big-font-mode'; use this for
+;;   presentations or streaming.
+;; - `doom-unicode-font' -- for unicode glyphs
+;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
 ;;
-;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
-;; font string. You generally only need these two:
+;; See 'C-h v doom-font' for documentation and more examples of what they
+;; accept. For example:
+;;
+;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
+;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
+;;
+;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
+;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
+;; refresh your font settings. If Emacs still can't find your font, it likely
+;; wasn't installed correctly. Font issues are rarely Doom issues!
 (setq doom-font (font-spec :family "Terminus" :size 18))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. These are the defaults.
-;; (setq doom-theme 'doom-one)
-;; (setq doom-theme 'wheatgrass)
-;; (setq doom-theme 'doom-acario-dark)
-(setq doom-theme 'doom-homage-black)
+;; `load-theme' function. This is the default:
+(setq doom-theme 'doom-ir-black)
 
-;; If you intend to use org, it is recommended you change this!
-(setq org-directory "~/.emacsOrgFiles/org/")
-
-;; If you want to change the style of line numbers, change this to `relative' or
-;; `nil' to disable it:
+;; This determines the style of line numbers in effect. If set to `nil', line
+;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
 
+;; If you use `org' and don't want your org files in the default location below,
+;; change `org-directory'. It must be set before org loads!
+(setq org-directory "~/.emacsOrgFiles/org")
+(setq org-roam-directory "~/.emacsOrgFiles/org/roam")
 
-;; Here are some additional functions/macros that could help you configure Doom:
+;; Whenever you reconfigure a package, make sure to wrap your config in an
+;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
+;;
+;;   (after! PACKAGE
+;;     (setq x y))
+;;
+;; The exceptions to this rule:
+;;
+;;   - Setting file/directory variables (like `org-directory')
+;;   - Setting variables which explicitly tell you to set them before their
+;;     package is loaded (see 'C-h v VARIABLE' to look up their documentation).
+;;   - Setting doom variables (which start with 'doom-' or '+').
+;;
+;; Here are some additional functions/macros that will help you configure Doom.
 ;;
 ;; - `load!' for loading external *.el files relative to this one
-;; - `use-package' for configuring packages
+;; - `use-package!' for configuring packages
 ;; - `after!' for running code after a package has loaded
-;; - `add-load-path!' for adding directories to the `load-path', where Emacs
-;;   looks when you load packages with `require' or `use-package'.
+;; - `add-load-path!' for adding directories to the `load-path', relative to
+;;   this file. Emacs searches the `load-path' when you load packages with
+;;   `require' or `use-package'.
 ;; - `map!' for binding new keys
 ;;
 ;; To get information about any of these functions/macros, move the cursor over
-;; the highlighted symbol at press 'K' (non-evil users must press 'C-c g k').
+;; the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
 ;; This will open documentation for it, including demos of how they are used.
+;; Alternatively, use `C-h o' to look up a symbol (functions, variables, faces,
+;; etc).
 ;;
-;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
+;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; Changes the splash image
-(setq fancy-splash-image "~/Pictures/logos/emacs/emacs-logo.png")
-
+;; org-agenda config
 (setq org-agenda-files '("~/.emacsOrgFiles/agenda/todo.org"
                          "~/.emacsOrgFiles/agenda/habits.org"))
 
-;; This is for elfeed
-;; https://develop.spacemacs.org/layers/+readers/elfeed/README.html#setup-feeds
-;; Page for documentation on getting elfeed setup
-;; (elfeed :variables rmh-elfeed-org-files (list "~/.emacsOrgFiles/private/elfeed1.org"))
+;; elfeed config
 (setq rmh-elfeed-org-files (list "~/.emacsOrgFiles/private/elfeed.org"))
 
 (after! elfeed
@@ -92,7 +111,7 @@
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "link-handler.pl")
 
-;; Custom Keybindings
+;; custom keybindings
 (map! :leader
       :desc "fd-dired in cwd"
       "s f" #'fd-dired)
@@ -126,12 +145,7 @@
       :desc "Default Filter" "d" #'elfeed-custom-default-filter
       :desc "Radio Filter" "r" #'elfeed-custom-radio-filter)
 
-(fset 'test-macro-1
-   (kmacro-lambda-form [?i ?< ?a ?  ?h ?r ?e ?f ?= ?\" ?\" escape ?x ?A ?> ?< ?/ ?a ?> escape ?h ?h ?h ?h ?h ?i escape ?l] 0 "%d"))
-
-(fset 'html-custom-insert-ahref
-   (kmacro-lambda-form [?A return ?< ?a ?h backspace ?  ?h ?r ?e ?d backspace ?f ?= ?\" ?\" backspace right right ?< ?/ ?a left left left left left] 0 "%d"))
-
+;; custom functions
 (defun vterm-run-ncmpcpp ()
   "Run ncmpcpp in vterm"
   (interactive)
@@ -162,6 +176,7 @@
       (vterm-send-string vterm-custom-command-name)
       (vterm-send-return)))
 
+;; org-capture template config
 (after! org
   (setq org-capture-templates
       '(
@@ -191,60 +206,6 @@
         ("j" "Journal" entry (file+datetree "~/org/journal.org")
          "* %?\nEntered on %U\n  %i\n  %a"))))
 
-(require 'mu4e)
-;; (require 'smtpmail)
-
-(defvar my-mu4e-account-alist
-  '(("xndt98-live"
-     (mu4e-sent-folder "/xndt98-live/Sent")
-     (mu4e-drafts-folder "/xndt98-live/Drafts")
-     (mu4e-trash-folder "/xndt98-live/Trash")
-     (mu4e-compose-signature
-       (concat
-         "Nick K\n"
-         "test something\n"))
-     (user-mail-address "xndt98@live.com")
-     (smtpmail-default-smtp-server "smtp.office365.com")
-     (smtpmail-smtp-server "smtp.office365.com")
-     (smtpmail-local-domain "live.com")
-     (smtpmail-smtp-user "xndt98")
-     (smtpmail-smtp-service 587))
-    ("acc2-domain"
-     (mu4e-sent-folder "/acc2-domain/Sent")
-     (mu4e-drafts-folder "/acc2-domain/Drafts")
-     (mu4e-trash-folder "/acc2-domain/Trash")
-     (mu4e-compose-signature
-       (concat
-         "Suzy Q\n"
-         "acc2@domain.com\n"))
-     (user-mail-address "acc2@domain.com")
-     (smtpmail-default-smtp-server "smtp.domain.com")
-     (smtpmail-smtp-server "smtp.domain.com")
-     (smtpmail-smtp-user "acc2@domain.com")
-     (smtpmail-stream-type starttls)
-     (smtpmail-smtp-service 587))
-    ("acc3-domain"
-     (mu4e-sent-folder "/acc3-domain/Sent")
-     (mu4e-drafts-folder "/acc3-domain/Drafts")
-     (mu4e-trash-folder "/acc3-domain/Trash")
-     (mu4e-compose-signature
-       (concat
-         "John Boy\n"
-         "acc3@domain.com\n"))
-     (user-mail-address "acc3@domain.com")
-     (smtpmail-default-smtp-server "smtp.domain.com")
-     (smtpmail-smtp-server "smtp.domain.com")
-     (smtpmail-smtp-user "acc3@domain.com")
-     (smtpmail-stream-type starttls)
-     (smtpmail-smtp-service 587))))
-
-;; (setq send-mail-function    'smtpmail-send-it
-;;           user-mail-address  "xndt98@live.com"
-;;           smtpmail-smtp-server  "smtp.office365.com"
-;;           smtpmail-smtp-user  "xndt98"
-;;           smtpmail-stream-type  'starttls
-;;           smtpmail-smtp-service 587)
-
 (setq ispell-dictionary "en")
 
 (require 'org-crypt)
@@ -253,22 +214,13 @@
 
 ;; (setq org-crypt-key nil)
 (setq org-crypt-key "xndt98@live.com")
-;; GPG key to use for encryption
-;; Either the Key ID or set to nil to use symmetric encryption.
 
 (setq auto-save-default nil)
-;; Auto-saving does not cooperate with org-crypt.el: so you need to
-;; turn it off if you plan to use org-crypt.el quite often.  Otherwise,
-;; you'll get an (annoying) message each time you start Org.
-
-;; To turn it off only locally, you can insert this:
-;;
-;; # -*- buffer-auto-save-file-name: nil; -*-
 
 (setq perl-indent-level 2)
 
-(add-hook! 'org-mode-hook
-  (setq-local yas-indent-line 'fixed))
+;; (add-hook! 'org-mode-hook
+;;   (setq-local yas-indent-line 'fixed))
 
 (setq yas-triggers-in-field t)
 
