@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: org-aprop
+# key: ap
+# --
+:PROPERTIES:
+:DateLastWatched:
+:Genre:
+:LOGGING: COMPLETED(!)
+:LastWatchedEpisode:
+:TotalEpisodes:
+:END:
