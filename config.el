@@ -217,8 +217,6 @@
 
 (setq auto-save-default nil)
 
-(setq perl-indent-level 2)
-
 ;; (add-hook! 'org-mode-hook
 ;;   (setq-local yas-indent-line 'fixed))
 
