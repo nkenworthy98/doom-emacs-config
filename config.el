@@ -182,9 +182,7 @@
       '(
         ("t" "TODO")
         ("tp" "Personal TODO" entry (file+headline "~/.emacsOrgFiles/agenda/todo.org" "Personal")
-         "* TODO %?\nSCHEDULED: %^t\n")
-        ("ts" "School TODO" entry (file+headline "~/.emacsOrgFiles/agenda/todo.org" "School")
-         "* TODO %?\nSCHEDULED: %^t\n")
+         "* TODO %?\nSCHEDULED: %^t\n" :empty-lines-before 1)
 
         ("l" "Laptop file")
         ("lm" "Music to add" entry (file+headline "~/.emacsOrgFiles/org/laptop.org" "Music")
