@@ -50,3 +50,4 @@
 ;(unpin! t)
 
 (package! elfeed-goodies :disable t)
+(package! puppet-mode)
